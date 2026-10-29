@@ -8,7 +8,14 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
     background: #1b1b24;
     color: #ececf1;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ezrs3gwV0tTgxCrYVNVwGawW5k4r4uujPjXNovQn_A&s=10');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
+
+
 
 .container {
     max-width: 720px;
