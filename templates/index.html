@@ -29,5 +29,23 @@
             {% endfor %}
         </table>
     </div>
+
+    {% if added %}
+    <script>
+        for (let i = 0; i < 100; i++) {
+            const bat = document.createElement('span');
+            bat.className = 'bat';
+            bat.textContent = '🦇';
+            bat.style.left = Math.random() * 100 + 'vw';
+            bat.style.fontSize = 20 + Math.random() * 30 + 'px';
+            bat.style.setProperty('--drift', (Math.random() * 40 - 20) + 'vw');
+            bat.style.animationDuration = 0.8 + Math.random() * 1.2 + 's';
+            bat.style.animationDelay = Math.random() * 0.8 + 's';
+            bat.addEventListener('animationend', () => bat.remove());
+            document.body.appendChild(bat);
+        }
+        history.replaceState(null, '', '/');
+    </script>
+    {% endif %}
 </body>
 </html>

@@ -7,7 +7,8 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     monsters = Monster.get_all()
-    return render_template('index.html', monsters=monsters)
+    added = request.args.get('added') == '1'
+    return render_template('index.html', monsters=monsters, added=added)
 
 
 @app.route('/monster', methods=['POST'])
@@ -15,7 +16,7 @@ def save_monster():
     monster = Monster(name=request.form['name'],
                       power=request.form['power'])
     monster.save()
-    return redirect('/')
+    return redirect('/?added=1')
 
 
 if __name__ == '__main__':

@@ -100,3 +100,20 @@ th {
 tr:nth-child(even) td {
     background: #2e2e3d;
 }
+
+.bat {
+    position: fixed;
+    bottom: -80px;
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0;
+    animation: bat-fly ease-in forwards;
+}
+
+@keyframes bat-fly {
+    0%   { opacity: 1; transform: translate(0, 0) scaleX(1); }
+    25%  { transform: translate(calc(var(--drift) * 0.25 + 4vw), -30vh) scaleX(0.6); }
+    50%  { transform: translate(calc(var(--drift) * 0.5 - 4vw), -65vh) scaleX(1); }
+    75%  { transform: translate(calc(var(--drift) * 0.75 + 4vw), -100vh) scaleX(0.6); }
+    100% { opacity: 1; transform: translate(var(--drift), -140vh) scaleX(1); }
+}
