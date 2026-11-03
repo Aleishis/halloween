@@ -1,4 +1,4 @@
-from app import app
+from flask.app import app
 
 def test_index_responde():
     client = app.test_client()
